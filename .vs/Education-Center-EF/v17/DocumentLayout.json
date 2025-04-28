@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\iT\\source\\repos\\FirstRestProject\\Education-Center-EF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{752B617C-0F5E-4D63-98F9-AE6FD16D98F9}|Education-Center-EF.csproj|c:\\users\\it\\source\\repos\\firstrestproject\\education-center-ef\\models\\clspeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752B617C-0F5E-4D63-98F9-AE6FD16D98F9}|Education-Center-EF.csproj|solutionrelative:models\\clspeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752B617C-0F5E-4D63-98F9-AE6FD16D98F9}|Education-Center-EF.csproj|c:\\users\\it\\source\\repos\\firstrestproject\\education-center-ef\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752B617C-0F5E-4D63-98F9-AE6FD16D98F9}|Education-Center-EF.csproj|solutionrelative:appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsPeople.cs",
+              "DocumentMoniker": "C:\\Users\\iT\\source\\repos\\FirstRestProject\\Education-Center-EF\\Models\\clsPeople.cs",
+              "RelativeDocumentMoniker": "Models\\clsPeople.cs",
+              "ToolTip": "C:\\Users\\iT\\source\\repos\\FirstRestProject\\Education-Center-EF\\Models\\clsPeople.cs",
+              "RelativeToolTip": "Models\\clsPeople.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T19:32:54.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\iT\\source\\repos\\FirstRestProject\\Education-Center-EF\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "AppDbContext.cs",
+              "ToolTip": "C:\\Users\\iT\\source\\repos\\FirstRestProject\\Education-Center-EF\\AppDbContext.cs",
+              "RelativeToolTip": "AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T19:23:09.838Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
