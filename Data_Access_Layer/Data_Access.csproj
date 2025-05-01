@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="OperationsClases\" />
   </ItemGroup>
 
 </Project>
