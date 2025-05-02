@@ -3,10 +3,10 @@
   "WorkspaceRootPath": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Presentation_Layer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\models\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\models\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\models\\educationlevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -28,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -68,12 +68,11 @@
               "RelativeToolTip": "..\\Data_Access_Layer\\Models\\EducationLevel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T15:31:36.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T15:31:36.055Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Class.cs",
               "DocumentMoniker": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Models\\Class.cs",
               "RelativeDocumentMoniker": "..\\Data_Access_Layer\\Models\\Class.cs",
@@ -86,13 +85,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AppDBContext.cs",
               "DocumentMoniker": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Context\\AppDBContext.cs",
               "RelativeDocumentMoniker": "..\\Data_Access_Layer\\Context\\AppDBContext.cs",
               "ToolTip": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Context\\AppDBContext.cs",
               "RelativeToolTip": "..\\Data_Access_Layer\\Context\\AppDBContext.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAzwBQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T15:30:56.201Z",
               "EditorCaption": ""
@@ -107,8 +106,7 @@
               "RelativeToolTip": "..\\Data_Access_Layer\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-01T13:35:39.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T13:35:39.025Z"
             },
             {
               "$type": "Document",
@@ -120,8 +118,7 @@
               "RelativeToolTip": "..\\Data_Access_Layer\\Data_Access.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-01T13:34:45.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T13:34:45.017Z"
             },
             {
               "$type": "Document",

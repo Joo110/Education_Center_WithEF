@@ -46,6 +46,7 @@ public partial class AppDBContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
    
+    //Read the connection strings from json file
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer(new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("ConnectionStrings").Value);
 
