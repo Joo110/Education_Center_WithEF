@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data_Access.Models;
 
-public partial class Group
+public partial class GroupData
 {
     [Key]
     [Column("GroupID")]

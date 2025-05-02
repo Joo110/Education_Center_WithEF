@@ -1,6 +1,7 @@
 ﻿namespace Business_Access
+
 {
-    public class Class1
+    public class Subject
     {
 
     }

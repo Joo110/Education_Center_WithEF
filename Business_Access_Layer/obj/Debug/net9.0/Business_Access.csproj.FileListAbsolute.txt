@@ -1,0 +1,17 @@
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\bin\Debug\net9.0\appsettings.json
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\bin\Debug\net9.0\Business_Access.deps.json
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\bin\Debug\net9.0\Business_Access.dll
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\bin\Debug\net9.0\Business_Access.pdb
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\bin\Debug\net9.0\Data_Access.dll
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\bin\Debug\net9.0\Data_Access.pdb
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.csproj.AssemblyReference.cache
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.AssemblyInfoInputs.cache
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.AssemblyInfo.cs
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.csproj.CoreCompileInputs.cache
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.sourcelink.json
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business.A736CEB1.Up2Date
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.dll
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\refint\Business_Access.dll
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.pdb
+D:\GitHub Repos\Educational_Center_repo\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\ref\Business_Access.dll

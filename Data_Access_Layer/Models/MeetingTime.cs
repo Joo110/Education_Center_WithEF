@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data_Access.Models;
 
-public partial class MeetingTime
+public partial class MeetingTimeData
 {
     [Key]
     [Column("MeetingTimeID")]
