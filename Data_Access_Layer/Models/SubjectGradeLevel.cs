@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data_Access.Models;
 
-public partial class SubjectGradeLevelData
+public partial class SubjectGradeLevel
 {
     [Key]
     [Column("SubjectGradeLevelID")]

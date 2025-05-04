@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data_Access.Models;
 
-public partial class PaymentData
+public partial class Payment
 {
     [Key]
     [Column("PaymentID")]

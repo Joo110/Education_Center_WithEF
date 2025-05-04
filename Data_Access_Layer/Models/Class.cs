@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data_Access.Models;
 
-public partial class ClassData
+public partial class Class
 {
     [Key]
     [Column("classID")]
@@ -21,4 +21,10 @@ public partial class ClassData
 
     [StringLength(50)]
     public string? Description { get; set; }
+
+    //for rest the result :-) we will remove it 
+    public override string ToString()
+    {
+        return $"Class id: {ClassId} class name: {Classname} capacity: {Capacity} description: {Description}";
+    }
 }

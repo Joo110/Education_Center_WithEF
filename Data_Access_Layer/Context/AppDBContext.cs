@@ -17,33 +17,33 @@ public partial class AppDBContext : DbContext
     //{
     //}
 
-    public virtual DbSet<ClassData> Classes { get; set; }
+    public virtual DbSet<Class> Classes { get; set; }
 
-    public virtual DbSet<EducationLevelData> EducationLevels { get; set; }
+    public virtual DbSet<EducationLevel> EducationLevels { get; set; }
 
-    public virtual DbSet<GradeLevelData> GradeLevels { get; set; }
+    public virtual DbSet<GradeLevel> GradeLevels { get; set; }
 
-    public virtual DbSet<GroupData> Groups { get; set; }
+    public virtual DbSet<Group> Groups { get; set; }
 
-    public virtual DbSet<MeetingTimeData> MeetingTimes { get; set; }
+    public virtual DbSet<MeetingTime> MeetingTimes { get; set; }
 
-    public virtual DbSet<PaymentData> Payments { get; set; }
+    public virtual DbSet<Payment> Payments { get; set; }
 
-    public virtual DbSet<PersonData> People { get; set; }
+    public virtual DbSet<Person> People { get; set; }
 
-    public virtual DbSet<StudentData> Students { get; set; }
+    public virtual DbSet<Student> Students { get; set; }
 
-    public virtual DbSet<StudentGroupData> StudentGroups { get; set; }
+    public virtual DbSet<StudentGroup> StudentGroups { get; set; }
 
-    public virtual DbSet<SubjectData> Subjects { get; set; }
+    public virtual DbSet<Subject> Subjects { get; set; }
 
-    public virtual DbSet<SubjectGradeLevelData> SubjectGradeLevels { get; set; }
+    public virtual DbSet<SubjectGradeLevel> SubjectGradeLevels { get; set; }
 
-    public virtual DbSet<SubjectTeacherData> SubjectTeachers { get; set; }
+    public virtual DbSet<SubjectTeacher> SubjectTeachers { get; set; }
 
-    public virtual DbSet<TeacherData> Teachers { get; set; }
+    public virtual DbSet<Teacher> Teachers { get; set; }
 
-    public virtual DbSet<UserData> Users { get; set; }
+    public virtual DbSet<User> Users { get; set; }
 
    
     //Read the connection strings from json file
