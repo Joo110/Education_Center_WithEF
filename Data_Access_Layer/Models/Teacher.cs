@@ -28,4 +28,18 @@ public partial class Teacher
 
     [Column("PersonID")]
     public int PersonId { get; set; }
+
+    [ForeignKey("CreatedByUserId")]
+    [InverseProperty("Teachers")]
+    public virtual User CreatedByUser { get; set; } = null!;
+
+    [ForeignKey("EducationLevelId")]
+    [InverseProperty("Teachers")]
+    public virtual EducationLevel EducationLevel { get; set; } = null!;
+
+    [InverseProperty("Teacher")]
+    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
+
+    [InverseProperty("Teacher")]
+    public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; } = new List<SubjectTeacher>();
 }

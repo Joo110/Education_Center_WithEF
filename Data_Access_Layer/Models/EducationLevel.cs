@@ -14,4 +14,7 @@ public partial class EducationLevel
 
     [StringLength(50)]
     public string LevelName { get; set; } = null!;
+
+    [InverseProperty("EducationLevel")]
+    public virtual ICollection<Teacher> Teachers { get; set; } = new List<Teacher>();
 }

@@ -23,4 +23,18 @@ public partial class SubjectGradeLevel
 
     [Column("GradeLevelID")]
     public int GradeLevelId { get; set; }
+
+    [ForeignKey("GradeLevelId")]
+    [InverseProperty("SubjectGradeLevels")]
+    public virtual GradeLevel GradeLevel { get; set; } = null!;
+
+    [InverseProperty("SubjectGradeLevel")]
+    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+
+    [ForeignKey("SubjectId")]
+    [InverseProperty("SubjectGradeLevels")]
+    public virtual Subject Subject { get; set; } = null!;
+
+    [InverseProperty("SubjectGradeLevel")]
+    public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; } = new List<SubjectTeacher>();
 }

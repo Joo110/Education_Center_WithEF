@@ -25,4 +25,16 @@ public partial class Payment
 
     [Column("CreatedByUserID")]
     public int? CreatedByUserId { get; set; }
+
+    [ForeignKey("CreatedByUserId")]
+    [InverseProperty("Payments")]
+    public virtual User? CreatedByUser { get; set; }
+
+    [ForeignKey("StudentGroupId")]
+    [InverseProperty("Payments")]
+    public virtual StudentGroup StudentGroup { get; set; } = null!;
+
+    [ForeignKey("SubjectGradeLevelId")]
+    [InverseProperty("Payments")]
+    public virtual SubjectGradeLevel SubjectGradeLevel { get; set; } = null!;
 }

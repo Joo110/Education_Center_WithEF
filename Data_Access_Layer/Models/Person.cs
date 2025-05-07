@@ -33,4 +33,10 @@ public partial class Person
 
     [StringLength(50)]
     public string Address { get; set; } = null!;
+
+    [InverseProperty("Person")]
+    public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+
+    [InverseProperty("Person")]
+    public virtual ICollection<User> Users { get; set; } = new List<User>();
 }

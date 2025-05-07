@@ -1,2 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using OperationsClasses;
+var result = await ClassData.GetInfoByIDAsync(1);
+Console.WriteLine(result.ToString());

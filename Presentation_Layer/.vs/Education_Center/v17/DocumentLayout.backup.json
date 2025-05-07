@@ -6,13 +6,10 @@
       "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\operationsclasses\\classdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\data_access.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\models\\educationlevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10732889-C787-A89A-B68B-A8F369CE668D}|..\\Data_Access_Layer\\Data_Access.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\data_access_layer\\models\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{618E19FD-1480-4B52-8BAB-95E5072D12CF}|..\\TeastOutPutOnConsole\\TeastOutPutOnConsole.csproj|d:\\github repos\\educational_center_repo\\education_center_withef\\teastoutputonconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +19,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,16 +51,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EducationLevel.cs",
-              "DocumentMoniker": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Models\\EducationLevel.cs",
-              "RelativeDocumentMoniker": "..\\Data_Access_Layer\\Models\\EducationLevel.cs",
-              "ToolTip": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Models\\EducationLevel.cs",
-              "RelativeToolTip": "..\\Data_Access_Layer\\Models\\EducationLevel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:38:37.663Z",
+              "DocumentIndex": 1,
+              "Title": "Data_Access",
+              "DocumentMoniker": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Data_Access.csproj",
+              "RelativeDocumentMoniker": "..\\Data_Access_Layer\\Data_Access.csproj",
+              "ToolTip": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Data_Access.csproj",
+              "RelativeToolTip": "..\\Data_Access_Layer\\Data_Access.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-07T15:26:32.796Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\Program.cs",
+              "RelativeDocumentMoniker": "..\\TeastOutPutOnConsole\\Program.cs",
+              "ToolTip": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\Program.cs",
+              "RelativeToolTip": "..\\TeastOutPutOnConsole\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T09:09:53.232Z"
             },
             {
               "$type": "Document",
@@ -73,35 +82,9 @@
               "RelativeDocumentMoniker": "..\\Data_Access_Layer\\OperationsClasses\\ClassData.cs",
               "ToolTip": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\OperationsClasses\\ClassData.cs*",
               "RelativeToolTip": "..\\Data_Access_Layer\\OperationsClasses\\ClassData.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:38:33.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Class.cs",
-              "DocumentMoniker": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Models\\Class.cs",
-              "RelativeDocumentMoniker": "..\\Data_Access_Layer\\Models\\Class.cs",
-              "ToolTip": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Models\\Class.cs",
-              "RelativeToolTip": "..\\Data_Access_Layer\\Models\\Class.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:38:31.424Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppDBContext.cs",
-              "DocumentMoniker": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Context\\AppDBContext.cs",
-              "RelativeDocumentMoniker": "..\\Data_Access_Layer\\Context\\AppDBContext.cs",
-              "ToolTip": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\Data_Access_Layer\\Context\\AppDBContext.cs",
-              "RelativeToolTip": "..\\Data_Access_Layer\\Context\\AppDBContext.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAIwC0AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:37:58.695Z",
+              "WhenOpened": "2025-05-04T08:38:33.611Z",
               "EditorCaption": ""
             }
           ]

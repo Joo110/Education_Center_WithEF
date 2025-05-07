@@ -14,4 +14,10 @@ public partial class GradeLevel
 
     [StringLength(50)]
     public string GradeName { get; set; } = null!;
+
+    [InverseProperty("GradeLevel")]
+    public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+
+    [InverseProperty("GradeLevel")]
+    public virtual ICollection<SubjectGradeLevel> SubjectGradeLevels { get; set; } = new List<SubjectGradeLevel>();
 }

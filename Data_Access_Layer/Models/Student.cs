@@ -22,4 +22,19 @@ public partial class Student
 
     [Column("GradeLevelID")]
     public int GradeLevelId { get; set; }
+
+    [ForeignKey("CreatedByUserId")]
+    [InverseProperty("Students")]
+    public virtual User CreatedByUser { get; set; } = null!;
+
+    [ForeignKey("GradeLevelId")]
+    [InverseProperty("Students")]
+    public virtual GradeLevel GradeLevel { get; set; } = null!;
+
+    [ForeignKey("PersonId")]
+    [InverseProperty("Students")]
+    public virtual Person Person { get; set; } = null!;
+
+    [InverseProperty("Students")]
+    public virtual ICollection<StudentGroup> StudentGroups { get; set; } = new List<StudentGroup>();
 }

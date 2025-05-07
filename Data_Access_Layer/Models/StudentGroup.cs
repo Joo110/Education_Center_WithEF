@@ -26,4 +26,19 @@ public partial class StudentGroup
 
     [Column("StudentsID")]
     public int StudentsId { get; set; }
+
+    [ForeignKey("CreatedByUserId")]
+    [InverseProperty("StudentGroups")]
+    public virtual User CreatedByUser { get; set; } = null!;
+
+    [ForeignKey("GroupId")]
+    [InverseProperty("StudentGroups")]
+    public virtual Group Group { get; set; } = null!;
+
+    [InverseProperty("StudentGroup")]
+    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+
+    [ForeignKey("StudentsId")]
+    [InverseProperty("StudentGroups")]
+    public virtual Student Students { get; set; } = null!;
 }

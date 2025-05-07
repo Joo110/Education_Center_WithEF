@@ -22,9 +22,6 @@ public partial class Class
     [StringLength(50)]
     public string? Description { get; set; }
 
-    //for rest the result :-) we will remove it 
-    public override string ToString()
-    {
-        return $"Class id: {ClassId} class name: {Classname} capacity: {Capacity} description: {Description}";
-    }
+    [InverseProperty("Class")]
+    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 }

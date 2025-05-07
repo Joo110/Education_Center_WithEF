@@ -39,4 +39,27 @@ public partial class Group
     public DateTime? LastModifiedDate { get; set; }
 
     public bool IsActive { get; set; }
+
+    [ForeignKey("ClassId")]
+    [InverseProperty("Groups")]
+    public virtual Class Class { get; set; } = null!;
+
+    [ForeignKey("CreatedByUserId")]
+    [InverseProperty("Groups")]
+    public virtual User CreatedByUser { get; set; } = null!;
+
+    [ForeignKey("MeetingTimeId")]
+    [InverseProperty("Groups")]
+    public virtual MeetingTime MeetingTime { get; set; } = null!;
+
+    [InverseProperty("Group")]
+    public virtual ICollection<StudentGroup> StudentGroups { get; set; } = new List<StudentGroup>();
+
+    [ForeignKey("SubjectTeacherId")]
+    [InverseProperty("Groups")]
+    public virtual SubjectTeacher SubjectTeacher { get; set; } = null!;
+
+    [ForeignKey("TeacherId")]
+    [InverseProperty("Groups")]
+    public virtual Teacher Teacher { get; set; } = null!;
 }

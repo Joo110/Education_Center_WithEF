@@ -23,4 +23,15 @@ public partial class SubjectTeacher
 
     [Column("SubjectGradeLevelID")]
     public int SubjectGradeLevelId { get; set; }
+
+    [InverseProperty("SubjectTeacher")]
+    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
+
+    [ForeignKey("SubjectGradeLevelId")]
+    [InverseProperty("SubjectTeachers")]
+    public virtual SubjectGradeLevel SubjectGradeLevel { get; set; } = null!;
+
+    [ForeignKey("TeacherId")]
+    [InverseProperty("SubjectTeachers")]
+    public virtual Teacher Teacher { get; set; } = null!;
 }

@@ -14,4 +14,7 @@ public partial class Subject
 
     [StringLength(50)]
     public string SubjectName { get; set; } = null!;
+
+    [InverseProperty("Subject")]
+    public virtual ICollection<SubjectGradeLevel> SubjectGradeLevels { get; set; } = new List<SubjectGradeLevel>();
 }

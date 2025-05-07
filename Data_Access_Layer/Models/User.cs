@@ -24,4 +24,23 @@ public partial class User
 
     [Column("PersonID")]
     public int PersonId { get; set; }
+
+    [InverseProperty("CreatedByUser")]
+    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
+
+    [InverseProperty("CreatedByUser")]
+    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+
+    [ForeignKey("PersonId")]
+    [InverseProperty("Users")]
+    public virtual Person Person { get; set; } = null!;
+
+    [InverseProperty("CreatedByUser")]
+    public virtual ICollection<StudentGroup> StudentGroups { get; set; } = new List<StudentGroup>();
+
+    [InverseProperty("CreatedByUser")]
+    public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+
+    [InverseProperty("CreatedByUser")]
+    public virtual ICollection<Teacher> Teachers { get; set; } = new List<Teacher>();
 }

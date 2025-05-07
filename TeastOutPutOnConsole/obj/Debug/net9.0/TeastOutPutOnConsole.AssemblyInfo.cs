@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TeastOutPutOnConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37a4f8a11ef24093bcb603bad7da8c89aff7b63e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82069637683a1c9f2184404155d553b1e035236b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TeastOutPutOnConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TeastOutPutOnConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

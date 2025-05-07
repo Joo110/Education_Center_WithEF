@@ -22,4 +22,7 @@ public partial class MeetingTime
     public string MeetingDays { get; set; } = null!;
 
     public DateOnly? NumberDate { get; set; }
+
+    [InverseProperty("MeetingTime")]
+    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 }
