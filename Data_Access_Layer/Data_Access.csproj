@@ -27,4 +27,20 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\EducationLevel_DTOs\" />
+    <Folder Include="DTOs\GradeLevel_DTOs\" />
+    <Folder Include="DTOs\Group_DTOs\" />
+    <Folder Include="DTOs\MeetingTime_DTOs\" />
+    <Folder Include="DTOs\User_DTOs\" />
+    <Folder Include="DTOs\Teacher_DTOs\" />
+    <Folder Include="DTOs\SubjectTeacher_DTOs\" />
+    <Folder Include="DTOs\SubjectGradeLevel_DTOs\" />
+    <Folder Include="DTOs\Subject_DTOs\" />
+    <Folder Include="DTOs\StudentGroup_DTOs\" />
+    <Folder Include="DTOs\Student_DTOs\" />
+    <Folder Include="DTOs\Person_DTOs\" />
+    <Folder Include="DTOs\Payment_DTOs\" />
+  </ItemGroup>
+
 </Project>
