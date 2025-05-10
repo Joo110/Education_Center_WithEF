@@ -1,14 +1,9 @@
 ﻿
 using Data_Access.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-
-
 namespace OperationsClasses;
-
 public  class ClassData
 {
-    
     public static async Task<ClassDto?> GetInfoByIDAsync(int classID)
     {
         try
@@ -118,5 +113,4 @@ public  class ClassData
         }
 
     }
-
 }
