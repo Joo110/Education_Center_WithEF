@@ -3064,9 +3064,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\TeastOutPutOnConsole.csproj",
-      "projectName": "TeastOutPutOnConsole",
-      "projectPath": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\TeastOutPutOnConsole.csproj",
+      "projectUniqueName": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\TestOutPutOnConsole.csproj",
+      "projectName": "TestOutPutOnConsole",
+      "projectPath": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\TestOutPutOnConsole.csproj",
       "packagesPath": "C:\\Users\\ALI\\.nuget\\packages\\",
       "outputPath": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\obj\\",
       "projectStyle": "PackageReference",

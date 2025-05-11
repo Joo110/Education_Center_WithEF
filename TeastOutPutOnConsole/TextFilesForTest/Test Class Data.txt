@@ -1,0 +1,60 @@
+﻿Console.WriteLine("==== ClassData Testing ====\n");
+
+// 1. Add new class
+var newClass = new ClassDto
+{
+    classname = "Science",
+    capacity = 30,
+    Description = "Basic Science class"
+};
+
+int newClassId = await ClassData.AddAsync(newClass);
+Console.WriteLine($"Added class with ID: {newClassId}\n");
+
+// 2. Get all classes
+var allClasses = await ClassData.GetAllClassesAsync();
+Console.WriteLine("All classes:");
+if (allClasses != null)
+{
+    foreach (var cls in allClasses)
+    {
+        Console.WriteLine($"ID: {cls.classId}, Name: {cls.classname}, Capacity: {cls.capacity}, Desc: {cls.Description}");
+    }
+}
+else
+{
+    Console.WriteLine("No classes found.");
+}
+
+Console.WriteLine();
+
+// 3. Get class by ID
+var classInfo = await ClassData.GetInfoByIDAsync(newClassId);
+if (classInfo != null)
+{
+    Console.WriteLine("Class details by ID:");
+    Console.WriteLine($"ID: {classInfo.classId}, Name: {classInfo.classname}, Capacity: {classInfo.capacity}, Desc: {classInfo.Description}\n");
+}
+else
+{
+    Console.WriteLine("Class not found.\n");
+}
+
+// 4. Update class
+var updatedClass = new ClassDto
+{
+    classId = newClassId,
+    classname = "Advanced Science",
+    capacity = 35,
+    Description = "Updated Science class"
+};
+
+bool updateResult = await ClassData.Update(updatedClass);
+Console.WriteLine(updateResult ? "Update successful." : "Update failed.");
+Console.WriteLine();
+
+// 5. Count of all classes
+int count = ClassData.GetAllClassesCount();
+Console.WriteLine($"Total number of classes: {count}");
+
+Console.WriteLine("\n==== End of Test ====");

@@ -1,0 +1,54 @@
+﻿Console.WriteLine("Testing GradeLevelData class...\n");
+
+// Test: Get all grade level names
+var gradeNames = await GradeLevelData.GetAllGradeLevelsName();
+Console.WriteLine("All Grade Level Names:");
+if (gradeNames != null)
+{
+    foreach (var name in gradeNames)
+    {
+        Console.WriteLine($"- {name}");
+    }
+}
+else
+{
+    Console.WriteLine("No grade levels found.");
+}
+
+// Test: Get grade level name by ID
+Console.WriteLine("\nEnter GradeLevelID to get its name:");
+if (int.TryParse(Console.ReadLine(), out int id))
+{
+    var nameById = GradeLevelData.GetGradeLevelName(id);
+    Console.WriteLine($"Name for ID {id}: {nameById ?? "Not found"}");
+
+    // Test: Get full grade level info
+    var dto = GradeLevelData.GetInfoByID(id);
+    if (dto != null)
+    {
+        Console.WriteLine($"Dto => ID: {dto.GradeLevelId}, Name: {dto.GradeName}");
+    }
+    else
+    {
+        Console.WriteLine("Dto not found.");
+    }
+}
+else
+{
+    Console.WriteLine("Invalid ID input.");
+}
+
+// Test: Get grade level ID by name
+Console.WriteLine("\nEnter GradeName to get its ID:");
+var inputName = Console.ReadLine();
+if (!string.IsNullOrWhiteSpace(inputName))
+{
+    var gradeId = GradeLevelData.GetGradeLevelID(inputName);
+    Console.WriteLine($"ID for name '{inputName}': {gradeId?.ToString() ?? "Not found"}");
+}
+else
+{
+    Console.WriteLine("Invalid name input.");
+}
+
+Console.WriteLine("\nFinished testing.");

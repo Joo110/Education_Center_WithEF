@@ -1,0 +1,47 @@
+﻿Console.WriteLine("==== EducationLevelData Test ====\n");
+
+// 1. Get All Education Level Names
+var allNames = await EducationLevelData.GetEductionLevelName();
+Console.WriteLine("All Education Level Names:");
+if (allNames != null && allNames.Count > 0)
+{
+    foreach (var name in allNames)
+    {
+        Console.WriteLine($"- {name}");
+    }
+}
+else
+{
+    Console.WriteLine("No names found or error occurred.");
+}
+
+Console.WriteLine();
+
+// 2. Get ID by Name
+string testName = "Primary";  // غير الاسم حسب البيانات اللي عندك
+int? levelId = EducationLevelData.GetEducationLevelID(testName);
+if (levelId.HasValue)
+    Console.WriteLine($"ID for '{testName}' is: {levelId.Value}");
+else
+    Console.WriteLine($"No ID found for '{testName}'");
+
+Console.WriteLine();
+
+// 3. Get Name by ID
+int testId = 1;  // غيّره حسب البيانات اللي عندك
+string? levelName = EducationLevelData.GetEducationLevelName(testId);
+if (levelName != null)
+    Console.WriteLine($"Name for ID {testId} is: {levelName}");
+else
+    Console.WriteLine($"No name found for ID {testId}");
+
+Console.WriteLine();
+
+// 4. Get full DTO by ID
+var dto = EducationLevelData.GetInfoByID(testId);
+if (dto != null)
+    Console.WriteLine($"DTO -> ID: {dto.EducationLevelId}, Name: {dto.LevelName}");
+else
+    Console.WriteLine("DTO not found.");
+
+Console.WriteLine("\n==== End of EducationLevelData Test ====");

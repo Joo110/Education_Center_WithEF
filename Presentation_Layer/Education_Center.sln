@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business_Access", "..\Busin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_Access", "..\Data_Access_Layer\Data_Access.csproj", "{10732889-C787-A89A-B68B-A8F369CE668D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeastOutPutOnConsole", "..\TeastOutPutOnConsole\TeastOutPutOnConsole.csproj", "{618E19FD-1480-4B52-8BAB-95E5072D12CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOutPutOnConsole", "..\TeastOutPutOnConsole\TestOutPutOnConsole.csproj", "{618E19FD-1480-4B52-8BAB-95E5072D12CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

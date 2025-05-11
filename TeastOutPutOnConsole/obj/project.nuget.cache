@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S+BRXXu6C3s=",
+  "dgSpecHash": "qr/YbqVqOe0=",
   "success": true,
-  "projectFilePath": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\TeastOutPutOnConsole.csproj",
+  "projectFilePath": "D:\\GitHub Repos\\Educational_Center_repo\\Education_Center_WithEF\\TeastOutPutOnConsole\\TestOutPutOnConsole.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ALI\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ALI\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
