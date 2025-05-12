@@ -1,0 +1,3 @@
+﻿1-SP_GetScheduleForToday
+2-SP_GetAllGroupsDetails
+3-SP_GetAllStudentsInGroup

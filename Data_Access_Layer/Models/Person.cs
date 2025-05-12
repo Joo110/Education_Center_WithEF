@@ -24,7 +24,7 @@ public partial class Person
     [StringLength(50)]
     public string? LastName { get; set; }
 
-    public byte Gendor { get; set; }
+    public bool Gendor { get; set; }
 
     public DateOnly DateOfBirth { get; set; }
 

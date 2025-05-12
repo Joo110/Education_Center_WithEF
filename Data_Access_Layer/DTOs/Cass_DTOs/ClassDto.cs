@@ -12,8 +12,4 @@ public partial class ClassDto
     public int capacity { get; set; }
     public string? Description { get; set; }
 
-    public override string ToString()
-    {
-        return $"classId = {classId},  classname = {classname}, capacity = {capacity}, Description = {Description}";
-    }
 }

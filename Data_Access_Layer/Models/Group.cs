@@ -13,7 +13,7 @@ public partial class Group
     public int GroupId { get; set; }
 
     [StringLength(50)]
-    public string? GroupName { get; set; }
+    public string GroupName { get; set; } = null!;
 
     [Column("ClassID")]
     public int ClassId { get; set; }
