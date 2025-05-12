@@ -4,7 +4,7 @@ syntax: glob
 
 # Tool Runtime Dir
 # note: there is no trailing slash so if these are symlinks (which are seen as files,
-#       instead of directories), git will still ignore them.
+#       instead of directories), Git will still ignore them.
 .dotnet
 .dotnet-mono
 .dotnet-tools-global
