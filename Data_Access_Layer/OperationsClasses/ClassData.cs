@@ -10,9 +10,9 @@ namespace OperationsClasses
         {
             using (var context = new AppDbContext())
             {
-                return await TryCatchAsync(() =>
+                return await TryCatchAsync(async () =>
                 {
-                    return context.Classes.Where(c => c.ClassId == classID).Select(c => new ClassDto
+                    return await context.Classes.Where(c => c.ClassId == classID).Select(c => new ClassDto
                     {
                         classId = c.ClassId,
                         capacity = c.Capacity,
@@ -33,9 +33,9 @@ namespace OperationsClasses
         {
             using (var context = new AppDbContext())
             {
-                return await TryCatchAsync(() =>
+                return await TryCatchAsync( async () =>
                 {
-                    return context.Classes.Select(cs => new ClassDto
+                    return await context.Classes.Select(cs => new ClassDto
                     {
                         classId = cs.ClassId,
                         capacity = cs.Capacity,
@@ -67,7 +67,7 @@ namespace OperationsClasses
 
             }
         }
-        public static async Task<bool> Update(ClassDto dto)
+        public static async Task<bool> UpdateAsync(ClassDto dto)
         {
             using (var context = new AppDbContext())
             {

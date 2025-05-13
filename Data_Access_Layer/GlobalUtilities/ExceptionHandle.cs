@@ -25,6 +25,7 @@ namespace Data_Access.GlobalUtilities
             try
             {
                 return await func();
+             
             }
             catch
             {

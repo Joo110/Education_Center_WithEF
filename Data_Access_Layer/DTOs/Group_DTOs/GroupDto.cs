@@ -13,7 +13,7 @@ namespace Data_Access.DTOs.Group_DTOs
     {
         public int GroupId { get; set; }
 
-        public string? GroupName { get; set; }
+        public string GroupName { get; set; } = null!;
 
         public int ClassId { get; set; }
 

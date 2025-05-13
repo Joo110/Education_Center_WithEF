@@ -12,11 +12,11 @@ namespace OperationsClasses
 
     public class EducationLevelData
     {
-        public static async Task<List<string>?> GetEductionLevelName()
+        public static async Task<List<string>?> GetEductionLevelNameAsync()
         {
             using (AppDbContext context = new())
             {
-                return await TryCatchAsync(() => { return context.EducationLevels.Select(E_L => E_L.LevelName).ToListAsync(); });
+                return await TryCatchAsync(async () => { return await context.EducationLevels.Select(E_L => E_L.LevelName).ToListAsync(); });
             }
         }
         public static EducationLevelDto? GetInfoByID(int educationLevelID)

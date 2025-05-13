@@ -11,11 +11,11 @@ namespace OperationsClasses
     {
 
 
-        public static async Task<List<string>?> GetAllGradeLevelsName()
+        public static async Task<List<string>?> GetAllGradeLevelsNameAsync()
         {
             using (AppDbContext context = new())
             {
-                return await TryCatchAsync(() => { return context.GradeLevels.Select(x => x.GradeName).ToListAsync(); });
+                return await TryCatchAsync(async () => { return await context.GradeLevels.Select(x => x.GradeName).ToListAsync(); });
             }
         }
         // Get Grade Level Name By ID
