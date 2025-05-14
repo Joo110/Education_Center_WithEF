@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Data_Access.DTOs.Payment_DTOs
+﻿namespace Data_Access.DTOs.Payment_DTOs
 {
-    internal class PaymentDto
+    public class PaymentDto
     {
+        public int PaymentId { get; set; }
+        public int PaymentAmount { get; set; }
+        public int StudentGroupId { get; set; }
+        public int SubjectGradeLevelId { get; set; }
+        public DateTime? PaymentDate { get; set; }
+        public int? CreatedByUserId { get; set; }
     }
 }
