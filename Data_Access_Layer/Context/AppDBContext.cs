@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data_Access.DTOs.Group_DTOs;
+using Data_Access.DTOs.Payment_DTOs;
 using Data_Access.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -51,6 +52,7 @@ public class AppDbContext : DbContext
     public DbSet<ScheduleForTodayDto> scheduleForTodayDtos { get; set; }
     public DbSet<GroupsDetailsDto> groupsDetailsDtos { get; set; }
     public DbSet<AllStudentsInThisGroupDto> allStudentsInThisGroupDtos { get; set; }
+    public DbSet<PaymentDto> paymentDtos { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer(new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("ConnectionStrings").Value);
 
