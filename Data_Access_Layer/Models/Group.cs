@@ -27,7 +27,7 @@ public partial class Group
     [Column("MeetingTimeID")]
     public int MeetingTimeId { get; set; }
 
-    public int? StudentCount { get; set; }
+    public short? StudentCount { get; set; }
 
     [Column("CreatedByUserID")]
     public int CreatedByUserId { get; set; }

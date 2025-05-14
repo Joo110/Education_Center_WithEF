@@ -18,8 +18,8 @@ public partial class MeetingTime
     [Precision(0)]
     public TimeOnly EndTime { get; set; }
 
-    [StringLength(50)]
-    public string MeetingDays { get; set; } = null!;
+    [StringLength(1)]
+    public char MeetingDays { get; set; }
 
     public DateOnly? NumberDate { get; set; }
 

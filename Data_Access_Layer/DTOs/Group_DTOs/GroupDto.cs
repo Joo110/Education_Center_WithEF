@@ -23,7 +23,7 @@ namespace Data_Access.DTOs.Group_DTOs
 
         public int MeetingTimeId { get; set; }
 
-        public int? StudentCount { get; set; }
+        public short? StudentCount { get; set; }
 
         public int CreatedByUserId { get; set; }
 

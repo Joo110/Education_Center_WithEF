@@ -1,7 +1,4 @@
-﻿using Data_Access.DTOs.Group_DTOs;
-using Data_Access.DTOs.MeetingTime_DTOs;
-using OperationsClasses;
-Console.WriteLine("=== Testing GroupData Methods ===\n");
+﻿Console.WriteLine("=== Testing GroupData Methods ===\n");
 
 // Test: Add a new group
 Console.WriteLine("Adding a new group...");
@@ -40,7 +37,7 @@ if (groupId.HasValue)
 
     // Test: Update the group
     Console.WriteLine("\nUpdating group name...");
-    group.GroupName = "KOKO";
+    group.GroupName = "Updated Group Name";
     bool updated = await GroupData.UpdateAsync(group);
     Console.WriteLine(updated ? "Update successful." : "Update failed.");
 

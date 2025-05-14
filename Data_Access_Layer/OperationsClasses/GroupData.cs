@@ -8,14 +8,13 @@ using static Data_Access.GlobalUtilities.ExceptionHandle;
 namespace OperationsClasses
 {
 
-
     public class GroupData
     {
 
 
         public static async Task<GroupDto?> GetInfoByIDAsync(int groupID)
         {
-            using(AppDbContext context = new())
+            using (AppDbContext context = new())
             {
                 return await TryCatchAsync(async () =>
                 {
@@ -38,13 +37,15 @@ namespace OperationsClasses
                 });
             }
         }
-   
+
         public static async Task<List<ScheduleForTodayDto>?> GetScheduleForTodayAsync()
         {
             using (AppDbContext context = new())
             {
-                   return await TryCatchAsync(async () => {
-                       return await context.Set<ScheduleForTodayDto>().FromSqlRaw($"Exec SP_GetScheduleForToday").ToListAsync(); });
+                return await TryCatchAsync(async () =>
+                {
+                    return await context.Set<ScheduleForTodayDto>().FromSqlRaw($"Exec SP_GetScheduleForToday").ToListAsync();
+                });
             }
         }
 
@@ -52,17 +53,19 @@ namespace OperationsClasses
         {
             using (AppDbContext context = new())
             {
-                return await TryCatchAsync(async () => { 
-                    return await context.Set<GroupsDetailsDto>().FromSqlRaw("Exec SP_GetAllGroupsDetails").ToListAsync(); });
+                return await TryCatchAsync(async () =>
+                {
+                    return await context.Set<GroupsDetailsDto>().FromSqlRaw("Exec SP_GetAllGroupsDetails").ToListAsync();
+                });
             }
         }
 
         public static List<string>? GetAllGroupName()
         {
-           using(AppDbContext context = new())
-           {
-               return TryCatch(() => { return context.Groups.Select(gp => gp.GroupName)?.ToList(); });
-           }
+            using (AppDbContext context = new())
+            {
+                return TryCatch(() => { return context.Groups.Select(gp => gp.GroupName)?.ToList(); });
+            }
         }
 
         public static async Task<int?> AddAsync(GroupDto newGroup)
@@ -94,17 +97,15 @@ namespace OperationsClasses
             }
         }
 
-       public static async Task<bool> UpdateAsync(GroupDto Group)
+        public static async Task<bool> UpdateAsync(GroupDto Group /* The group is guaranteed to exist in the database, as it has already been validated in the presentation layer. */)
         {
             using (AppDbContext context = new())
             {
-                var group = context.Groups.Find(Group.GroupId);
-                if (group == null)
-                    return false;
+                var group = await context.Groups.FindAsync(Group.GroupId);
 
                 return await TryCatchAsync(async () =>
                 {
-                    group.ClassId = Group.ClassId;
+                    group!.ClassId = Group.ClassId;
                     group.CreatedByUserId = Group.CreatedByUserId;
                     group.CreationDate = Group.CreationDate;
                     group.GroupName = Group.GroupName;
@@ -114,10 +115,8 @@ namespace OperationsClasses
                     group.StudentCount = Group.StudentCount;
                     group.SubjectTeacherId = Group.SubjectTeacherId;
                     group.TeacherId = Group.TeacherId;
-                    group.GroupId = Group.GroupId;
 
                     return await context.SaveChangesAsync() > 0;
-
                 });
             }
         }
@@ -135,7 +134,7 @@ namespace OperationsClasses
                                 select SubjectGradeLevel.Fees).FirstOrDefaultAsync();
                     return await fees;
                 });
-               
+
             }
         }
 
@@ -151,6 +150,6 @@ namespace OperationsClasses
             }
 
         }
-    
+
     }
 }

@@ -67,17 +67,17 @@ namespace OperationsClasses
 
             }
         }
-        public static async Task<bool> UpdateAsync(ClassDto dto)
+        public static async Task<bool> UpdateAsync(ClassDto dto/*I'm sure it already exists in the database — in other words, I have already checked it in the presentation layer*/)
         {
             using (var context = new AppDbContext())
             {
                 return await TryCatchAsync(async () =>
                 {
                     var cls = context.Classes.Find(dto.classId);
-                    if (cls == null)
-                        return false;
+                    //if (cls == null)
+                    //    return false;
 
-                    cls.Classname = dto.classname;
+                    cls!.Classname = dto.classname;
                     cls.Capacity = dto.capacity;
                     cls.Description = dto.Description;
 

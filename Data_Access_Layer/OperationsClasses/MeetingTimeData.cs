@@ -1,169 +1,104 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Data_Access.Context;
+using Data_Access.DTOs.MeetingTime_DTOs;
+using Data_Access.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using static Data_Access.GlobalUtilities.ExceptionHandle;
 namespace OperationsClasses;
 
 
 public class MeetingTimeData
 {
-    /*
-     public static bool GetInfoByID(int? meetingTimeID, ref TimeSpan startTime, ref TimeSpan endTime, ref string meetingDays, ref DateTime NumberDate)
-         {
-             bool isFound = false;
 
-             try
-             {
-                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                 {
-                     connection.Open();
+    public static async Task<MeetingTimeDto?> GetInfoByIDAsync(int meetingTimeID)
+    {
+        using(AppDbContext context = new())
+        {
+            return await TryCatchAsync(async ()  => { return await context.MeetingTimes
+                .Where(mt => mt.MeetingTimeId == meetingTimeID).Select(mt => new MeetingTimeDto
+                {
+                    MeetingTimeId = meetingTimeID,
+                    StartTime = mt.StartTime,
+                    EndTime = mt.EndTime,
+                    MeetingDays = mt.MeetingDays,
+                    NumberDate = mt.NumberDate
+                    
+                }).FirstOrDefaultAsync(); });
+        }
+    }
 
-                     using (SqlCommand command = new SqlCommand("SP_GetMeetingTimeInfoByID", connection))
-                     {
-                         command.CommandType = CommandType.StoredProcedure;
+    public static async Task<int> AddAsync(MeetingTimeDto meetingTime)
+    {
+        using(AppDbContext context = new())
+        {
+            var NewMeeting = new MeetingTime
+            {
+                StartTime = meetingTime.StartTime,
+                EndTime = meetingTime.EndTime,
+                MeetingDays = meetingTime.MeetingDays,
+                NumberDate = meetingTime.NumberDate
+            };
 
-                         command.Parameters.AddWithValue("@MeetingTimeID", (object)meetingTimeID ?? DBNull.Value);
+            return await TryCatchAsync(async () =>
+            {
+                context.MeetingTimes.Add(NewMeeting);
+                return await context.SaveChangesAsync();
+            });
+        }
+    }
 
-                         using (SqlDataReader reader = command.ExecuteReader())
-                         {
-                             if (reader.Read())
-                             {
-                                 // The record was found
-                                 isFound = true;
+    public static async Task<bool> UpdateAsync(MeetingTimeDto meetingTimeToUpdate/*I'm sure it already exists in the database — in other words, I have already checked it in the presentation layer*/)
+    {
+        using (AppDbContext context = new())
+        {
+            var mt = context.MeetingTimes.Find(meetingTimeToUpdate.MeetingTimeId);
+            //if(mt == null) 
+            //    return false;
+            mt!.MeetingTimeId = meetingTimeToUpdate.MeetingTimeId;
+            mt.StartTime = meetingTimeToUpdate.StartTime;
+            mt.EndTime = meetingTimeToUpdate.EndTime;
+            mt.MeetingDays = meetingTimeToUpdate.MeetingDays;
+            mt.NumberDate = meetingTimeToUpdate.NumberDate;
+            
 
-                                 startTime = (TimeSpan)reader["StartTime"];
-                                 endTime = (TimeSpan)reader["EndTime"];
-                                 meetingDays = (string)reader["MeetingDays"];
-                                 NumberDate = (DateTime)reader["NumberDate"];
-                             }
-                             else
-                             {
-                                 // The record was not found
-                                 isFound = false;
-                             }
-                         }
-                     }
-                 }
-             }
-             catch (Exception ex)
-             {
-                 isFound = false;
-                 clsDataAccessHelper.HandleException(ex);
-             }
-
-             return isFound;
-         }
-
-         public static int? Add(TimeSpan startTime, TimeSpan endTime, string meetingDays, DateTime NumberDate)
-         {
-             int? meetingTimeID = null;
-
-             try
-             {
-                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                 {
-                     connection.Open();
-
-                     using (SqlCommand command = new SqlCommand("SP_AddNewMeetingTime", connection))
-                     {
-                         command.CommandType = CommandType.StoredProcedure;
-
-                         command.Parameters.AddWithValue("@StartTime", startTime);
-                         command.Parameters.AddWithValue("@EndTime", endTime);
-                         command.Parameters.AddWithValue("@MeetingDays", meetingDays);
-                         command.Parameters.AddWithValue("@NumberDate", (object)NumberDate ?? DBNull.Value); // ✅ تصحيح القيم الفارغة
-
-                         SqlParameter outputIdParam = new SqlParameter("@NewMeetingTimeID", SqlDbType.Int)
-                         {
-                             Direction = ParameterDirection.Output
-                         };
-                         command.Parameters.Add(outputIdParam);
-
-                         command.ExecuteNonQuery();
-
-                         // ✅ تصحيح المشكلة: التحقق من أن القيمة ليست DBNull.Value
-                         if (outputIdParam.Value != DBNull.Value)
-                         {
-                             meetingTimeID = Convert.ToInt32(outputIdParam.Value);
-                         }
-                     }
-                 }
-             }
-             catch (Exception ex)
-             {
-                 clsDataAccessHelper.HandleException(ex);
-             }
-
-             return meetingTimeID;
-         }
-
-          public static bool Update(int meetingTimeID, TimeSpan startTime, TimeSpan endTime, string meetingDays, DateTime NumberDate)
-          {
-             int rowAffected = 0;
-
-             try
-             {
-                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                 {
-                     connection.Open();
-
-                     using (SqlCommand command = new SqlCommand("SP_UpdateMeetingTime", connection))
-                     {
-                         command.CommandType = CommandType.StoredProcedure;
-
-                         command.Parameters.AddWithValue("@MeetingTimeID", meetingTimeID);
-                         command.Parameters.AddWithValue("@StartTime", startTime);
-                         command.Parameters.AddWithValue("@EndTime", endTime);
-                         command.Parameters.AddWithValue("@MeetingDays", meetingDays);
-                         command.Parameters.AddWithValue("@NumberDate", (object)NumberDate ?? DBNull.Value); // ✅ تصحيح القيم الفارغة
-
-                         rowAffected = command.ExecuteNonQuery();
-                     }
-                 }
-             }
-             catch (Exception ex)
-             {
-                 clsDataAccessHelper.HandleException(ex);
-             }
-
-             return (rowAffected > 0);
-          }
+            return await TryCatchAsync(async () =>
+            {
+                return await context.SaveChangesAsync() > 0;
+            });
+        }
+    }
 
 
-         public static bool DoesMeetingTimeExist(TimeSpan startTime, DateTime numberDate)
-         {
-             using (SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString))
-             {
-                 conn.Open();
-                 using (SqlCommand cmd = new SqlCommand("SP_DoesMeetingTimeExistByStartTimeAndMeetingDays", conn))
-                 {
-                     cmd.CommandType = CommandType.StoredProcedure;
-                     cmd.Parameters.AddWithValue("@StartTime", startTime);
-                     cmd.Parameters.AddWithValue("@NumberDate", numberDate);
+    public static bool DoesMeetingTimeExist(TimeOnly startTime, DateOnly numberDate)
+    {
+        using (AppDbContext context = new())
+        {
+            if (context.MeetingTimes.Any(mt => mt.StartTime
+            == startTime && mt.NumberDate == numberDate)) 
+                return true;
 
-                     return (bool)cmd.ExecuteScalar();
-                 }
-             }
-         }
+            return false;
+        }
+    }
 
 
-         public static DataTable GetAllMeetingTimeDetails()
-         {
-             DataTable dt = new DataTable();
-             string connectionString = clsDataAccessSettings.ConnectionString;
+    public static async Task<List<MeetingTimeDto>?> GetAllMeetingTimeDetailsAsync()
+    {
+        using (AppDbContext context = new())
+        {
+            return await TryCatchAsync(async () => {
+                return await context.MeetingTimes
+                .Select(mt => new MeetingTimeDto
+                {
+                    MeetingTimeId = mt.MeetingTimeId,
+                    StartTime = mt.StartTime,
+                    EndTime = mt.EndTime,
+                    MeetingDays = mt.MeetingDays,
+                    NumberDate = mt.NumberDate
 
-             using (SqlConnection conn = new SqlConnection(connectionString))
-             {
-                 using (SqlCommand cmd = new SqlCommand("SP_GetAllMeetingTimeDetails", conn))
-                 {
-                     cmd.CommandType = CommandType.StoredProcedure;
-
-                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                     {
-                         da.Fill(dt);
-                     }
-                 }
-             }
-
-             return dt;
-         }
-     */
+                }).ToListAsync();
+            });
+        }
+    }
 
 }

@@ -1,0 +1,60 @@
+﻿Console.WriteLine("Meeting Time Management Console");
+
+// Add a new meeting time
+var newMeeting = new MeetingTimeDto
+{
+    StartTime = new TimeOnly(10, 0),
+    EndTime = new TimeOnly(11, 0),
+    MeetingDays = '2', // Tuesday
+    NumberDate = DateOnly.FromDateTime(DateTime.Today)
+};
+
+Console.WriteLine("Adding new meeting...");
+int result = await MeetingTimeData.AddAsync(newMeeting);
+Console.WriteLine(result > 0 ? "Meeting added successfully!" : "Failed to add meeting.");
+
+Console.Write("\nEnter a meeting ID to update: ");
+if (int.TryParse(Console.ReadLine(), out int updateId))
+{
+    var existingMeeting = await MeetingTimeData.GetInfoByIDAsync(updateId);
+    if (existingMeeting != null)
+    {
+        existingMeeting.StartTime = new TimeOnly(15, 0); // 3:00 PM
+        existingMeeting.EndTime = new TimeOnly(16, 0);   // 4:00 PM
+        existingMeeting.MeetingDays = '4'; // Thursday
+        existingMeeting.NumberDate = DateOnly.FromDateTime(DateTime.Today.AddDays(1)); // Tomorrow
+
+        bool updateResult = await MeetingTimeData.UpdateAsync(existingMeeting);
+        Console.WriteLine(updateResult ? "Meeting updated successfully!" : "Failed to update meeting.");
+    }
+    else
+    {
+        Console.WriteLine("Meeting not found. Cannot update.");
+    }
+}
+// Get all meetings
+Console.WriteLine("\nFetching all meetings:");
+var allMeetings = await MeetingTimeData.GetAllMeetingTimeDetailsAsync();
+if (allMeetings != null)
+{
+    foreach (var mt in allMeetings)
+    {
+        Console.WriteLine($"ID: {mt.MeetingTimeId}, Time: {mt.StartTime}-{mt.EndTime}, Day: {mt.MeetingDays}, Date: {mt.NumberDate}");
+    }
+}
+
+// Get meeting by ID
+Console.Write("\nEnter a meeting ID to fetch: ");
+if (int.TryParse(Console.ReadLine(), out int id))
+{
+    var mt = await MeetingTimeData.GetInfoByIDAsync(id);
+    if (mt != null)
+        Console.WriteLine($"Found: ID={mt.MeetingTimeId}, Start={mt.StartTime}, End={mt.EndTime}");
+    else
+        Console.WriteLine("Meeting not found.");
+}
+
+// Check if meeting exists
+Console.WriteLine("\nChecking if a meeting exists at 10:00 today...");
+bool exists = MeetingTimeData.DoesMeetingTimeExist(new TimeOnly(20, 0), DateOnly.FromDateTime(DateTime.Today));
+Console.WriteLine(exists ? "Meeting exists." : "No meeting found at that time.");

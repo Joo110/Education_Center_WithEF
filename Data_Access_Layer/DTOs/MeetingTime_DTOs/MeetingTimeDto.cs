@@ -16,7 +16,7 @@ namespace Data_Access.DTOs.MeetingTime_DTOs
 
         public TimeOnly EndTime { get; set; }
 
-        public string MeetingDays { get; set; } = null!;
+        public char MeetingDays { get; set; } 
 
         public DateOnly? NumberDate { get; set; }
 
