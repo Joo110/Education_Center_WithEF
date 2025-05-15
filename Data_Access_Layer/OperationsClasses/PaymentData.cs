@@ -6,12 +6,24 @@ using Microsoft.EntityFrameworkCore;
 using Data_Access.Models;
 namespace OperationsClasses;
 
-public  class PaymentData
+/// <summary>
+/// Provides data access operations for payment-related entities using Entity Framework Core as the ORM and SQL Server as the data provider.
+/// </summary>
+/// <remarks>
+/// This class contains static methods for retrieving and counting payment records, including support for both LINQ-based and stored procedure-based queries.
+/// </remarks>
+public class PaymentData
 {
-    /*
-     SELECT        dbo.Payments.PaymentID, dbo.StudentGroups.StudentsID, dbo.StudentGroups.GroupID, dbo.Payments.SubjectGradeLevelID, dbo.Payments.PaymentAmount, dbo.Payments.PaymentDate
-    FROM            dbo.Payments INNER JOIN
-                             dbo.StudentGroups ON dbo.Payments.StudentGroupID = dbo.StudentGroups.StudentGroupID*/
+    
+    /// <summary>
+    /// Retrieves all payment records by joining the Payments and StudentGroups tables.
+    /// </summary>
+    /// <returns>
+    /// A list of <see cref="PaymentDto"/> objects representing all payments, or null if an exception occurs.
+    /// </returns>
+    /// <remarks>
+    /// Uses LINQ to Entities for querying. Results are ordered by payment date.
+    /// </remarks>
     public static async Task<List<PaymentDto>?> GetAllPayments()
     {
         using (AppDbContext context = new())
@@ -37,20 +49,33 @@ public  class PaymentData
             });
         }
     }
-     public static async Task<List<PaymentDto>?> GetAllPayments_SP()
+
+    /// <summary>
+    /// Retrieves all payment records using a stored procedure.
+    /// </summary>
+    /// <returns>
+    /// A list of <see cref="PaymentDto"/> objects representing all payments, or null if an exception occurs.
+    /// </returns>
+    /// <remarks>
+    /// Executes the "SP_GetAllPayments" stored procedure in SQL Server using Entity Framework Core.
+    /// </remarks>
+    public static async Task<List<PaymentDto>?> GetAllPayments_SP()
     {
         using (AppDbContext context = new())
         {
             return await TryCatchAsync(async () =>
             {
                 return await context.Set<PaymentDto>().FromSqlRaw("SP_GetAllPayments").ToListAsync();
-
             });
-
+        }
     }
-    }
 
-
+    /// <summary>
+    /// Gets the total count of payment records in the Payments table.
+    /// </summary>
+    /// <returns>
+    /// The number of payment records.
+    /// </returns>
     public static int GetAllPaymentsCount()
     {
         using (AppDbContext context = new())
