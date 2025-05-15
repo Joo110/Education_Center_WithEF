@@ -1,5 +1,6 @@
 ﻿using Data_Access.Context;
 using Data_Access.DTOs.EducationLevel_DTOs;
+using Data_Access.DTOs.Teacher_DTOs;
 using OperationsClasses;
 using System.Threading.Tasks;
 
@@ -16,6 +17,11 @@ namespace Business_Access
            
             public int? EducationLevelId { get; set; }
             public string LevelName { get; set; } = null!;
+
+            //in future it well contain all teachers in this educational level
+           //public List<TeacherDto> TeachersInThis_Edu_Level { get { return new List<TeacherDto>(); } }
+
+
             /// <summary>
             /// This property made to return the EducationLevel object properties only not return other methods to use it with API,
             /// and it also read only

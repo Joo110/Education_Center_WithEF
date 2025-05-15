@@ -1,4 +1,5 @@
-﻿using OperationsClasses;
+﻿using Data_Access.DTOs.Group_DTOs;
+using OperationsClasses;
 
 /// <summary>
 /// Represents a business logic layer class for managing class entities, including creation, update, and retrieval operations.
@@ -15,11 +16,14 @@ public class Class
     public int capacity { get; set; }
     public string? Description { get; set; }
 
+    //in future it contain all group in current class
+    //public List<GroupDto> GroupsInClass { get { return new List<GroupDto>(); } }
+
     /// <summary>
-    /// This property made to return the class object properties only not return other methods to use it with API,
+    /// This property made to return the class object properties only not return other methods to use it with API and Add and Update as parameter,
     /// and it also read only
     /// </summary>
-    public ClassDto classDto
+    public ClassDto dto
     {
         get
         {
@@ -65,12 +69,7 @@ public class Class
     /// <returns>True if the class was added successfully; otherwise, false.</returns>
     private async Task<bool> _AddAsync()
     {
-        this.classId = await ClassData.AddAsync(new ClassDto
-        {
-            capacity = this.capacity,
-            classname = this.className,
-            Description = this.Description
-        });
+        this.classId = await ClassData.AddAsync(dto);
 
         return this.classId != null;
     }

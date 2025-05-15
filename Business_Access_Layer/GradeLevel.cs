@@ -1,4 +1,5 @@
 ﻿using Data_Access.DTOs.GradeLevel_DTOs;
+using Data_Access.DTOs.Student_DTOs;
 using OperationsClasses;
 
 namespace Business_Access
@@ -17,6 +18,9 @@ namespace Business_Access
         
         public int? GradeLevelId { get; set; }
         public string? GradeName { get; set; }
+
+        //in future it contain all group in current class
+       // public List<StudentDto> StudentsInThisGrade { get { return new List<StudentDto>(); } }
 
         /// <summary>
         /// This property made to return the GradeLevel object properties only not return other methods to use it with API,
