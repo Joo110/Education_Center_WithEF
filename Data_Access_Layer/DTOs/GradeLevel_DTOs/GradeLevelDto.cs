@@ -9,7 +9,7 @@ namespace Data_Access.DTOs.GradeLevel_DTOs
 {
     public class GradeLevelDto
     {
-        public int GradeLevelId { get; set; }
+        public int? GradeLevelId { get; set; }
         public string? GradeName { get; set; }
     }
 }

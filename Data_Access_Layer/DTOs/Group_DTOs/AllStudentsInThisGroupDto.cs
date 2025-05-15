@@ -10,7 +10,7 @@ namespace Data_Access.DTOs.Group_DTOs
     [Keyless]
     public class AllStudentsInThisGroupDto
     {
-        public int StudentID { get; set; }
+        public int? StudentID { get; set; }
         public string FullName { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public DateTime DateOfBirth { get; set; }

@@ -75,11 +75,11 @@ namespace OperationsClasses
         /// Retrieves all group names.
         /// </summary>
         /// <returns>A list of group names as strings.</returns>
-        public static List<string>? GetAllGroupName()
+        public static async Task<List<string>?> GetAllGroupNameAsync()
         {
             using (AppDbContext context = new())
             {
-                return TryCatch(() => context.Groups.Select(gp => gp.GroupName)?.ToList());
+                return await TryCatchAsync(async () => { return await context.Groups.Select(gp => gp.GroupName).ToListAsync(); });
             }
         }
 

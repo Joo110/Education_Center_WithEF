@@ -1,6 +1,8 @@
 ﻿using Data_Access.Context;
 using Data_Access.DTOs.GradeLevel_DTOs;
+using Data_Access.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using static Data_Access.GlobalUtilities.ExceptionHandle;
 
 namespace OperationsClasses
@@ -31,11 +33,14 @@ namespace OperationsClasses
         /// <returns>
         /// The name of the grade level if found; otherwise, null.
         /// </returns>
-        public static string? GetGradeLevelName(int? gradeLevelID)
+        public static async Task<string?> GetGradeLevelNameAsync(int? gradeLevelID)
         {
             using (AppDbContext context = new())
             {
-                return TryCatch(() => { return context.GradeLevels.Find(gradeLevelID)?.GradeName; });
+                return await TryCatchAsync(async () => { GradeLevel? gradeLevel = await context.GradeLevels.FindAsync(gradeLevelID);
+
+                    return gradeLevel?.GradeName;
+                });
             }
         }
 
@@ -46,11 +51,13 @@ namespace OperationsClasses
         /// <returns>
         /// The ID of the grade level if found; otherwise, null.
         /// </returns>
-        public static int? GetGradeLevelID(string gradeName)
+        public static async Task<int?> GetGradeLevelIDAsync(string gradeName)
         {
             using (AppDbContext context = new())
             {
-                return TryCatch(() => { return context.GradeLevels.Where(g => g.GradeName == gradeName).FirstOrDefault()?.GradeLevelId; });
+                return await TryCatchAsync(async () => { GradeLevel? gradeLevel = await context.GradeLevels.Where(g => g.GradeName == gradeName).FirstOrDefaultAsync();
+                return gradeLevel?.GradeLevelId;
+                });
             }
         }
 
@@ -61,14 +68,14 @@ namespace OperationsClasses
         /// <returns>
         /// A <see cref="GradeLevelDto"/> containing grade level information if found; otherwise, null.
         /// </returns>
-        public static GradeLevelDto? GetInfoByID(int gradeLevelID)
+        public static async Task<GradeLevelDto?> GetInfoByIDAsync(int gradeLevelID)
         {
             using (AppDbContext context = new())
             {
-                return TryCatch(() =>
+                return await TryCatchAsync(async () =>
                 {
-                    var g = context.GradeLevels.Find(gradeLevelID);
-                    return g != null ? new GradeLevelDto { GradeName = g.GradeName, GradeLevelId = gradeLevelID } : null;
+                    GradeLevel? gradeLevel = await context.GradeLevels.FindAsync(gradeLevelID);
+                    return gradeLevel != null ? new GradeLevelDto { GradeName = gradeLevel.GradeName, GradeLevelId = gradeLevelID } : null;
                 });
             }
         }

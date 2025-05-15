@@ -4,6 +4,7 @@ using static Data_Access.GlobalUtilities.ExceptionHandle;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
 using Data_Access.Models;
+using System.Threading.Tasks;
 namespace OperationsClasses;
 
 /// <summary>
@@ -24,7 +25,7 @@ public class PaymentData
     /// <remarks>
     /// Uses LINQ to Entities for querying. Results are ordered by payment date.
     /// </remarks>
-    public static async Task<List<PaymentDto>?> GetAllPayments()
+    public static async Task<List<PaymentDto>?> GetAllPaymentsAsync()
     {
         using (AppDbContext context = new())
         {
@@ -59,7 +60,7 @@ public class PaymentData
     /// <remarks>
     /// Executes the "SP_GetAllPayments" stored procedure in SQL Server using Entity Framework Core.
     /// </remarks>
-    public static async Task<List<PaymentDto>?> GetAllPayments_SP()
+    public static async Task<List<PaymentDto>?> GetAllPayments_SP_Async()
     {
         using (AppDbContext context = new())
         {
@@ -76,11 +77,11 @@ public class PaymentData
     /// <returns>
     /// The number of payment records.
     /// </returns>
-    public static int GetAllPaymentsCount()
+    public static async Task<int> GetAllPaymentsCountAsync()
     {
         using (AppDbContext context = new())
         {
-            return context.Payments.Count();
+            return await TryCatchAsync(async () => { return await context.Payments.CountAsync(); });
         }
     }
 }
