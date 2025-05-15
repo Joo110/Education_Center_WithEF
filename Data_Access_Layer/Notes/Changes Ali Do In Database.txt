@@ -1,3 +1,4 @@
 ﻿1- In the 'MeetingTimes' table, the 'MeetingDays' column was originally of type nvarchar(50),
 I changed it to char(1) to store the day number of the week instead the day name 
 ----
+2-change column PaymentAmount in table payment from int to smallmoney

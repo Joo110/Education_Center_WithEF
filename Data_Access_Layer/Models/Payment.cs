@@ -9,7 +9,7 @@ public partial class Payment
     [Column("PaymentID")]
     public int PaymentId { get; set; }
 
-    public int PaymentAmount { get; set; }
+    public decimal PaymentAmount { get; set; }
 
     [Column("StudentGroupID")]
     public int StudentGroupId { get; set; }

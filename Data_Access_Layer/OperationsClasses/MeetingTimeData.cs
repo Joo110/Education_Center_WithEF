@@ -85,8 +85,8 @@ public class MeetingTimeData
             var mt = context.MeetingTimes.Find(meetingTimeToUpdate.MeetingTimeId);
             //if(mt == null) 
             //    return false;
-            mt!.MeetingTimeId = meetingTimeToUpdate.MeetingTimeId;
-            mt.StartTime = meetingTimeToUpdate.StartTime;
+
+            mt!.StartTime = meetingTimeToUpdate.StartTime;
             mt.EndTime = meetingTimeToUpdate.EndTime;
             mt.MeetingDays = meetingTimeToUpdate.MeetingDays;
             mt.NumberDate = meetingTimeToUpdate.NumberDate;

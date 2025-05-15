@@ -10,7 +10,7 @@ namespace Data_Access.DTOs.MeetingTime_DTOs
 {
     public class MeetingTimeDto
     {
-        public int MeetingTimeId { get; set; }
+        public int? MeetingTimeId { get; set; }
 
         public TimeOnly StartTime { get; set; }
 

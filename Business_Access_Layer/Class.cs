@@ -10,7 +10,7 @@ using OperationsClasses;
 public class Class
 {
     public enum enMode { Add, Update }
-    public enMode mode = enMode.Add;
+    public enMode mode;
     public int? classId { get; set; }
     public string className { get; set; } = null!;
     public int capacity { get; set; }
@@ -80,13 +80,7 @@ public class Class
     /// <returns>True if the class was updated successfully; otherwise, false.</returns>
     private async Task<bool> _UpdateAsync()
     {
-        return await ClassData.UpdateAsync(new ClassDto
-        {
-            classId = this.classId,
-            capacity = this.capacity,
-            classname = this.className,
-            Description = this.Description
-        });
+        return await ClassData.UpdateAsync(dto);
     }
 
     /// <summary>
