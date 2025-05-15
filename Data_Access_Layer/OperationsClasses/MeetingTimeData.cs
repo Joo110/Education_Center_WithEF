@@ -107,15 +107,16 @@ public class MeetingTimeData
     /// <returns>
     /// <c>true</c> if a meeting time exists; otherwise, <c>false</c>.
     /// </returns>
-    public static bool DoesMeetingTimeExist(TimeOnly startTime, DateOnly numberDate)
+    public static async Task<bool> DoesMeetingTimeExistAsync(TimeOnly startTime, DateOnly numberDate)
     {
         using (AppDbContext context = new())
         {
-            if (context.MeetingTimes.Any(mt => mt.StartTime
-            == startTime && mt.NumberDate == numberDate))
-                return true;
-
-            return false;
+            return await TryCatchAsync(async () =>
+            {
+                return await (context.MeetingTimes.AnyAsync(mt => mt.StartTime
+            == startTime && mt.NumberDate == numberDate));
+            });
+           
         }
     }
 

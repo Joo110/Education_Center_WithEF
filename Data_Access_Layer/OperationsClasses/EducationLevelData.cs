@@ -38,13 +38,13 @@ namespace OperationsClasses
         /// <returns>
         /// An <see cref="EducationLevelDto"/> containing the education level information, or <c>null</c> if not found or an error occurs.
         /// </returns>
-        public static EducationLevelDto? GetInfoByID(int educationLevelID)
+        public static async Task<EducationLevelDto?> GetInfoByIDAsync(int educationLevelID)
         {
             using (AppDbContext context = new())
             {
-                return TryCatch(() =>
+                return await TryCatchAsync(async () =>
                 {
-                    var el = context.EducationLevels.Find(educationLevelID);
+                    EducationLevel? el = await context.EducationLevels.FindAsync(educationLevelID);
                     return el == null ? null : new EducationLevelDto { EducationLevelId = el.EducationLevelId, LevelName = el.LevelName };
                 });
             }
@@ -57,11 +57,18 @@ namespace OperationsClasses
         /// <returns>
         /// The unique identifier of the education level, or <c>null</c> if not found or an error occurs.
         /// </returns>
-        public static int? GetEducationLevelID(string educationLevelName)
+        public static async Task<int?> GetEducationLevelIDAsync(string educationLevelName)
         {
             using (AppDbContext context = new())
             {
-                return TryCatch(() => { return context.EducationLevels.Where(el => el.LevelName == educationLevelName).FirstOrDefault()?.EducationLevelId; });
+                return await TryCatchAsync(async () =>
+                {
+                    var educationLevel = await context.EducationLevels
+                        .Where(el => el.LevelName == educationLevelName)
+                        .FirstOrDefaultAsync();
+
+                    return educationLevel?.EducationLevelId;
+                });
             }
         }
 
@@ -72,11 +79,17 @@ namespace OperationsClasses
         /// <returns>
         /// The name of the education level, or <c>null</c> if not found or an error occurs.
         /// </returns>
-        public static string? GetEducationLevelName(int? educationLevelID)
+        public static async Task<string?> GetEducationLevelNameAsync(int? educationLevelID)
         {
             using (AppDbContext context = new())
             {
-                return TryCatch(() => { return context.EducationLevels.Where(el => el.EducationLevelId == educationLevelID).FirstOrDefault()?.LevelName; });
+                return await TryCatchAsync(async () => {
+                    var educationLevel =  await context.EducationLevels.
+                    Where(el => el.EducationLevelId == educationLevelID).FirstOrDefaultAsync();
+                    
+                    return educationLevel?.LevelName;
+
+                });
             }
         }
     }
