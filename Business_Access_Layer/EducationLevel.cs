@@ -16,6 +16,10 @@ namespace Business_Access
            
             public int? EducationLevelId { get; set; }
             public string LevelName { get; set; } = null!;
+            /// <summary>
+            /// This property made to return the EducationLevel object properties only not return other methods to use it with API,
+            /// and it also read only
+            /// </summary>
             public EducationLevelDto Dto
             {
                 get
@@ -54,9 +58,9 @@ namespace Business_Access
             /// <returns>A <see cref="EducationLevel"/> object or null if not found.</returns>
             public static async Task<EducationLevel?> Find(int eduId)
             {
-                var edu = await EducationLevelData.GetInfoByIDAsync(eduId);
+                var dto = await EducationLevelData.GetInfoByIDAsync(eduId);
 
-                return edu == null ? null : new EducationLevel { EducationLevelId = edu.EducationLevelId, LevelName = edu.LevelName };
+                return dto == null ? null : new EducationLevel(dto);
             }
 
             /// <summary>
