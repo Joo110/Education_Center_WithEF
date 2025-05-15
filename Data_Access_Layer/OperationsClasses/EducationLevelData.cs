@@ -23,7 +23,7 @@ namespace OperationsClasses
         /// <returns>
         /// A <see cref="Task{TResult}"/> representing the asynchronous operation, containing a list of education level names, or <c>null</c> if an error occurs.
         /// </returns>
-        public static async Task<List<string>?> GetEductionLevelNameAsync()
+        public static async Task<List<string>?> GetEducationLevelNamesAsync()
         {
             using (AppDbContext context = new())
             {
