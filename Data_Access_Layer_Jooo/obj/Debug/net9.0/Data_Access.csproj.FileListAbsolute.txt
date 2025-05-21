@@ -1,0 +1,16 @@
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.csproj.AssemblyReference.cache
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.AssemblyInfoInputs.cache
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.AssemblyInfo.cs
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.csproj.CoreCompileInputs.cache
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.sourcelink.json
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\bin\Debug\net9.0\appsettings.json
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\bin\Debug\net9.0\Data_Access.deps.json
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\bin\Debug\net9.0\Data_Access.runtimeconfig.json
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\bin\Debug\net9.0\Data_Access.dll
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\bin\Debug\net9.0\Data_Access.pdb
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.dll
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\refint\Data_Access.dll
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.pdb
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\Data_Access.genruntimeconfig.cache
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Data_Access_Layer\obj\Debug\net9.0\ref\Data_Access.dll
