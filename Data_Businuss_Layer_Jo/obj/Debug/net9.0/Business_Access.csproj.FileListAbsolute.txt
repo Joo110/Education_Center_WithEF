@@ -1,0 +1,6 @@
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.csproj.AssemblyReference.cache
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.AssemblyInfoInputs.cache
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.AssemblyInfo.cs
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.csproj.CoreCompileInputs.cache
+C:\Users\iT\source\repos\Joo110\Education_Center_WithEF\Business_Access_Layer\obj\Debug\net9.0\Business_Access.sourcelink.json
